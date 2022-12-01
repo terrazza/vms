@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+function getDockerIdByName() {
+    if [ -n ${1} ]; then
+    	echo $(docker ps -aqf "name=$1" | awk '{print $1}')
+    fi
+}
